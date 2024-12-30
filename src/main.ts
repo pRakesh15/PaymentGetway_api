@@ -18,9 +18,7 @@ async function bootstrap() {
   app.setGlobalPrefix('/api/v1');
 
   const corsOptions: CorsOptions = {
-    origin: ['https://payment-gatway-web-j623-2fhzhv3cw-prakesh15s-projects.vercel.app',
-      'https://payment-gatway-web.vercel.app/',
-    ], // Frontend domain
+    origin: true,// Frontend domain
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   };
