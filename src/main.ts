@@ -14,20 +14,21 @@ export const instance = new Razorpay({
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   // app.use(helmet())
-
+ 
   app.setGlobalPrefix('/api/v1');
 
   const corsOptions: CorsOptions = {
-    origin: true,// Frontend domain
+    origin:'https://payment-gatway-web.vercel.app',
+     // Frontend domain
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
-  };
+};
 
 
-  app.enableCors(corsOptions);
+app.enableCors(corsOptions);
 
 
-
+  
   // app.useGlobalPipes(new ValidationPipe());
   await app.listen(appConfig.port ?? 3000);
 }
