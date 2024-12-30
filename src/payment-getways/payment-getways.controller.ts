@@ -31,7 +31,7 @@ export class PaymentGetwaysController {
             );
 
             if (isVerified) {
-                const redirectUrl = `https://payment-gatway-web-j623-2fhzhv3cw-prakesh15s-projects.vercel.app/coffee/paymentsuccessfull?paymentid=${body.razorpay_payment_id}`;
+                const redirectUrl = `https://payment-gatway-web.vercel.app/coffee/paymentsuccessfull?paymentid=${body.razorpay_payment_id}`;
                 return res.redirect(redirectUrl);
             } else {
                 return res.status(400).send({ message: "Payment verification failed" });
